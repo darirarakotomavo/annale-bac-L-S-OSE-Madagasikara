@@ -67,7 +67,7 @@ export default function AdminPage() {
   return (
     <div className="max-w-2xl mx-auto my-10 p-8 bg-white rounded-xl shadow-md border border-gray-100">
       <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-        🇲🇬 Panneau d'Administration - Annales Bac Madagascar
+        🇲🇬 Panneau d'Administration - Annales Bac Madagasikara
       </h1>
 
       {/* Message de succès */}
