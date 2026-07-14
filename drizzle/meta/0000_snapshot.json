@@ -1,0 +1,260 @@
+{
+  "id": "c895059a-44ef-4448-b5c2-68cf2e173572",
+  "prevId": "00000000-0000-0000-0000-000000000000",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "public.matieres": {
+      "name": "matieres",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "nom": {
+          "name": "nom",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "code": {
+          "name": "code",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "matieres_nom_unique": {
+          "name": "matieres_nom_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "nom"
+          ]
+        },
+        "matieres_code_unique": {
+          "name": "matieres_code_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "code"
+          ]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.matieres_series": {
+      "name": "matieres_series",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "matiere_id": {
+          "name": "matiere_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "serie_id": {
+          "name": "serie_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "coefficient": {
+          "name": "coefficient",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "matieres_series_matiere_id_matieres_id_fk": {
+          "name": "matieres_series_matiere_id_matieres_id_fk",
+          "tableFrom": "matieres_series",
+          "tableTo": "matieres",
+          "columnsFrom": [
+            "matiere_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "matieres_series_serie_id_series_id_fk": {
+          "name": "matieres_series_serie_id_series_id_fk",
+          "tableFrom": "matieres_series",
+          "tableTo": "series",
+          "columnsFrom": [
+            "serie_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "matieres_series_matiere_id_serie_id_unique": {
+          "name": "matieres_series_matiere_id_serie_id_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "matiere_id",
+            "serie_id"
+          ]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.series": {
+      "name": "series",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "nom": {
+          "name": "nom",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "description": {
+          "name": "description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "series_nom_unique": {
+          "name": "series_nom_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "nom"
+          ]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.sujets": {
+      "name": "sujets",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "annee": {
+          "name": "annee",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "session": {
+          "name": "session",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'Principale'"
+        },
+        "matiere_id": {
+          "name": "matiere_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "serie_id": {
+          "name": "serie_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "sujet_pdf_url": {
+          "name": "sujet_pdf_url",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "corrige_pdf_url": {
+          "name": "corrige_pdf_url",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "sujets_matiere_id_matieres_id_fk": {
+          "name": "sujets_matiere_id_matieres_id_fk",
+          "tableFrom": "sujets",
+          "tableTo": "matieres",
+          "columnsFrom": [
+            "matiere_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "sujets_serie_id_series_id_fk": {
+          "name": "sujets_serie_id_series_id_fk",
+          "tableFrom": "sujets",
+          "tableTo": "series",
+          "columnsFrom": [
+            "serie_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "sequences": {},
+  "roles": {},
+  "policies": {},
+  "views": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}
