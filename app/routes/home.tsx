@@ -165,7 +165,7 @@ export default function HomePage() {
               Site web responsive conçu et développé par <span className="text-blue-400 font-bold">Richard RAKOTOMAVO</span>
             </p>
             <p className="text-gray-400 font-medium">
-              Développeur Autodidacte - Professeur de Physique 
+              Développeur Autodidacte - Professeur de Mathématiques et de Physique-Chimie  
             </p>
           </div>
 
