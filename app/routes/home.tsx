@@ -159,7 +159,7 @@ export default function HomePage() {
 
       {/* Pied de page */}
       <footer className="bg-gray-800 text-gray-400 text-center py-6 mt-12 border-t border-gray-700 text-xs">
-        <p>© {new Date().getFullYear()} Plateforme d'Annales Bac Madagascar. Tous droits réservés.</p>
+        <p>© {new Date().getFullYear()}Site de consultation des annales du bac de Madagasikara conçu et développé par Richard RAKOTOMAVO. Tous droits réservés.</p>
       </footer>
 
     </div>
