@@ -68,7 +68,7 @@ export default function HomePage() {
             Annales du Baccalauréat Madagascar
           </h1>
           <p className="mt-2 text-lg text-blue-100 max-w-2xl mx-auto">
-            Accédez gratuitement aux sujets officiels et corrigés du Bac malgache pour réussir vos examens !
+            Accédez gratuitement aux sujets officiels et corrigés du Bac Malagasy pour réussir vos examens !
           </p>
         </div>
       </header>
