@@ -156,12 +156,56 @@ export default function HomePage() {
         )}
 
       </main>
-
       {/* Pied de page */}
-      <footer className="bg-gray-800 text-gray-400 text-center py-6 mt-12 border-t border-gray-700 text-xs">
-        <p>© {new Date().getFullYear()}Site de consultation des annales du bac de Madagasikara conçu et développé par Richard RAKOTOMAVO. Tous droits réservés.</p>
-      </footer>
+      <footer className="bg-gray-950 text-gray-400 py-8 mt-12 border-t border-gray-800 text-xs">
+        <div className="max-w-4xl mx-auto px-4 flex flex-col items-center gap-4 text-center">
+          
+          <div className="space-y-1">
+            <p className="text-gray-300 font-semibold text-sm">
+              Site web responsive conçu et développé par <span className="text-blue-400 font-bold">Richard RAKOTOMAVO</span>
+            </p>
+            <p className="text-gray-400 font-medium">
+              Développeur Autodidacte - Professeur de Physique 
+            </p>
+          </div>
 
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 text-gray-400 mt-2">
+            <span className="font-semibold text-gray-500">Contact :</span>
+            
+            {/* Bouton de copie pour Facebook (Non cliquable vers un lien) */}
+            <button 
+              onClick={(e) => {
+                navigator.clipboard.writeText("Autodidacte Ramose Richard Physique");
+                const btn = e.currentTarget;
+                const originalText = btn.innerHTML;
+                btn.innerHTML = "✅ Copié !";
+                setTimeout(() => { btn.innerHTML = originalText; }, 2000);
+              }}
+              className="hover:text-blue-400 flex items-center gap-1 transition-colors cursor-pointer bg-transparent border-none p-0 text-xs text-gray-400 font-normal"
+              title="Cliquez pour copier le nom"
+            >
+              👤 Facebook : <span className="underline mr-1">Autodidacte Ramose Richard Physique</span> 📋
+            </button>
+
+            {/* Lien WhatsApp Direct */}
+            <a 
+              href="https://wa.me/261322462274" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-emerald-400 flex items-center gap-1 transition-colors"
+            >
+              📞 WhatsApp : <span className="underline">032 24 622 74</span>
+            </a>
+          </div>
+
+          <div className="w-12 h-px bg-gray-800 my-1"></div>
+          
+          <p className="text-gray-600">
+            Plateforme d'Annales Bac Madagasikara créée par Richard RAKOTOMAVO. Tous droits réservés. © {new Date().getFullYear()}
+          </p>
+
+        </div>
+      </footer>
     </div>
   );
 }
