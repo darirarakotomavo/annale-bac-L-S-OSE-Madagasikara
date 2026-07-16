@@ -203,7 +203,7 @@ export default function HomePage() {
           <div className="w-12 h-px bg-gray-800 my-1"></div>
           
           <p className="text-Lime-600">
-            Plateforme d'Annales Bac Séries(L - S - OSE - A - C - D) de Madagasikara créée par Richard RAKOTOMAVO. Tous droits réservés. © {new Date().getFullYear()}
+            Plateforme d'Annales Bac de Madagasikara, Séries (L - S - OSE - A - C - D), créée par Richard RAKOTOMAVO. Tous droits réservés. © {new Date().getFullYear()}
           </p>
 
         </div>
