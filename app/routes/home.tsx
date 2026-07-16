@@ -65,10 +65,11 @@ export default function HomePage() {
         <div className="max-w-5xl mx-auto text-center">
           <span className="text-4xl mb-2 block">🇲🇬</span>
           <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">
-            Annales du Baccalauréat Madagascar
+            Annales du Baccalauréat de Madagasikara
           </h1>
           <p className="mt-2 text-lg text-blue-100 max-w-2xl mx-auto">
-            Accédez gratuitement aux sujets officiels et corrigés du Bac Malagasy pour réussir vos examens !
+            Accédez gratuitement aux Sujets Officiels PDF et Corrigés PDF, Séries L - S - OSE, 
+            Séries  - A - C - D, toutes Matières, pour réussir vos examens !
           </p>
         </div>
       </header>
@@ -115,13 +116,13 @@ export default function HomePage() {
                   </h3>
                   
                   {/* Description de la série */}
-                  <p className="text-xs text-gray-500 italic">
+                  <p className="text-xs text-Emerald-500 italic">
                     {annale.serie?.description || 'Aucune description'}
                   </p>
                 </div>
 
                 {/* Pied de la carte avec accès aux fichiers PDF (camelCase validé par TypeScript) */}
-                <div className="bg-gray-50 px-6 py-4 border-t border-gray-100 flex gap-3">
+                <div className="bg-gray-200 px-6 py-4 border-t border-Emerald-300 flex gap-3">
                   
                   {/* Bouton Sujet */}
                   <a 
@@ -141,11 +142,11 @@ export default function HomePage() {
                       rel="noopener noreferrer"
                       className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white text-center text-sm font-semibold py-2 px-4 rounded-lg transition duration-150 shadow-sm"
                     >
-                      ✅ Corrigé
+                      ✅ Corrigés PDF
                     </a>
                   ) : (
                     <span className="flex-1 bg-gray-200 text-gray-400 text-center text-sm font-medium py-2 px-4 rounded-lg cursor-not-allowed">
-                      Pas de corrigé
+                      Pas de corrigés
                     </span>
                   )}
 
@@ -157,20 +158,21 @@ export default function HomePage() {
 
       </main>
       {/* Pied de page */}
-      <footer className="bg-gray-950 text-gray-400 py-8 mt-12 border-t border-gray-800 text-xs">
+      {/* <footer className="bg-gray-950 text-gray-400 py-8 mt-12 border-t border-gray-800 text-xs"> */}
+      <footer className="bg-linear-to-r from-blue-600 to-indigo-700 text-white py-12 px-4 shadow-md">
         <div className="max-w-4xl mx-auto px-4 flex flex-col items-center gap-4 text-center">
           
           <div className="space-y-1">
-            <p className="text-gray-300 font-semibold text-sm">
-              Site web responsive conçu et développé par <span className="text-blue-400 font-bold">Richard RAKOTOMAVO</span>
+            <p className="text-yellow-400 font-semibold text-sm">
+              Site web responsive conçu et développé par <span className="text-green-400 font-bold">Richard RAKOTOMAVO</span>
             </p>
-            <p className="text-gray-400 font-medium">
+            <p className="text-Amber-900 font-medium">
               Développeur Autodidacte - Professeur de Mathématiques et de Physique-Chimie  
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 text-gray-400 mt-2">
-            <span className="font-semibold text-gray-500">Contact :</span>
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 text-Rose-600 mt-2">
+            <span className="font-semibold text-red-300">Contact :</span>
             
             {/* Bouton de copie pour Facebook (Non cliquable vers un lien) */}
             <button 
@@ -181,7 +183,7 @@ export default function HomePage() {
                 btn.innerHTML = "✅ Copié !";
                 setTimeout(() => { btn.innerHTML = originalText; }, 2000);
               }}
-              className="hover:text-blue-400 flex items-center gap-1 transition-colors cursor-pointer bg-transparent border-none p-0 text-xs text-gray-400 font-normal"
+              className="hover:text-lime-500 flex items-center gap-1 transition-colors cursor-pointer bg-transparent border-none p-0 text-xs text-Rose-800 font-normal"
               title="Cliquez pour copier le nom"
             >
               👤 Facebook : <span className="underline mr-1">Autodidacte Ramose Richard Physique</span> 📋
@@ -200,8 +202,8 @@ export default function HomePage() {
 
           <div className="w-12 h-px bg-gray-800 my-1"></div>
           
-          <p className="text-gray-600">
-            Plateforme d'Annales Bac Madagasikara créée par Richard RAKOTOMAVO. Tous droits réservés. © {new Date().getFullYear()}
+          <p className="text-Lime-600">
+            Plateforme d'Annales Bac de Madagasikara créée par Richard RAKOTOMAVO. Tous droits réservés. © {new Date().getFullYear()}
           </p>
 
         </div>
