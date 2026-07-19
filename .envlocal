@@ -1,5 +1,9 @@
 import { put } from "@vercel/blob";
 
-const blob = await put("articles/blob.txt", "Hello World!", {
+const { url } = await put("articles/blob.txt", "Hello World!", {
   access: "public",
 });
+
+// const blob = await put("articles/blob.txt", "Hello World!", {
+//   access: "public",
+// });
