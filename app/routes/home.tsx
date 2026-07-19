@@ -69,7 +69,7 @@ export default function HomePage() {
           </h1>
           <p className="mt-2 text-lg text-blue-100 max-w-2xl mx-auto">
             Accédez gratuitement aux Sujets Officiels PDF et Corrigés PDF, Séries L - S - OSE, 
-            Séries  - A - C - D, toutes Matières, pour réussir vos examens !
+            Séries A - C - D, toutes Matières, pour réussir vos examens !
           </p>
         </div>
       </header>
@@ -116,13 +116,13 @@ export default function HomePage() {
                   </h3>
                   
                   {/* Description de la série */}
-                  <p className="text-xs text-Emerald-500 italic">
+                  <p className="text-xs text-emerald-600 italic">
                     {annale.serie?.description || 'Aucune description'}
                   </p>
                 </div>
 
-                {/* Pied de la carte avec accès aux fichiers PDF (camelCase validé par TypeScript) */}
-                <div className="bg-gray-200 px-6 py-4 border-t border-Emerald-300 flex gap-3">
+                {/* Pied de la carte avec accès aux fichiers PDF */}
+                <div className="bg-gray-50 px-6 py-4 border-t border-gray-150 flex gap-3">
                   
                   {/* Bouton Sujet */}
                   <a 
@@ -157,24 +157,24 @@ export default function HomePage() {
         )}
 
       </main>
+
       {/* Pied de page */}
-      {/* <footer className="bg-gray-950 text-gray-400 py-8 mt-12 border-t border-gray-800 text-xs"> */}
-      <footer className="bg-linear-to-r from-blue-600 to-indigo-700 text-white py-12 px-4 shadow-md">
+     <footer className="bg-linear-to-r from-blue-600 to-indigo-700 text-white py-12 px-4 shadow-md">
         <div className="max-w-4xl mx-auto px-4 flex flex-col items-center gap-4 text-center">
           
           <div className="space-y-1">
             <p className="text-yellow-400 font-semibold text-sm">
               Site web responsive conçu et développé par <span className="text-green-400 font-bold">Richard RAKOTOMAVO</span>
             </p>
-            <p className="text-Amber-900 font-medium">
+            <p className="text-blue-100 font-medium">
               Développeur Autodidacte - Professeur de Mathématiques et de Physique-Chimie  
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 text-Rose-600 mt-2">
-            <span className="font-semibold text-red-300">Contact :</span>
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 text-white mt-2">
+            <span className="font-semibold text-blue-200">Contact :</span>
             
-            {/* Bouton de copie pour Facebook (Non cliquable vers un lien) */}
+            {/* Bouton de copie pour Facebook */}
             <button 
               onClick={(e) => {
                 navigator.clipboard.writeText("Autodidacte Ramose Richard Physique");
@@ -183,7 +183,7 @@ export default function HomePage() {
                 btn.innerHTML = "✅ Copié !";
                 setTimeout(() => { btn.innerHTML = originalText; }, 2000);
               }}
-              className="hover:text-lime-500 flex items-center gap-1 transition-colors cursor-pointer bg-transparent border-none p-0 text-xs text-Rose-800 font-normal"
+              className="hover:text-yellow-300 flex items-center gap-1 transition-colors cursor-pointer bg-transparent border-none p-0 text-xs text-white font-normal"
               title="Cliquez pour copier le nom"
             >
               👤 Facebook : <span className="underline mr-1">Autodidacte Ramose Richard Physique</span> 📋
@@ -200,9 +200,9 @@ export default function HomePage() {
             </a>
           </div>
 
-          <div className="w-12 h-px bg-gray-800 my-1"></div>
+          <div className="w-12 h-px bg-blue-500 my-1"></div>
           
-          <p className="text-Lime-600">
+          <p className="text-blue-200 text-xs">
             Plateforme d'Annales Bac de Madagasikara, Séries (L - S - OSE - A - C - D), créée par Richard RAKOTOMAVO. Tous droits réservés. © {new Date().getFullYear()}
           </p>
 
